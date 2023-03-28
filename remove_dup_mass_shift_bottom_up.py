@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 14 15:49:11 2023
 
 @author: wenrchen
 """
-##remove duplicated mass shifts from those extracted from PSM table (optimized)
+##remove duplicated mass shifts from those extracted from PSM table (Bottom-up)
 import pandas as pd
 import sys
 
@@ -64,15 +63,6 @@ for key,value in protein_ms_dict.items():
                     i=flag
                     flag=i+1
                 else:
-                    # i_len=ms_df.iloc[i]['Mod end']-ms_df.iloc[i]['Mod start']
-                    # flag_len=ms_df.iloc[flag]['Mod end']-ms_df.iloc[flag]['Mod start']
-                    # if(i_len<=flag_len):
-                    #     drop_list.append(ms_df.iloc[i]["original_index"])
-                    #     flag+=1
-                    # else:
-                    #     drop_list.append(ms_df.iloc[i]["original_index"])
-                    #     i=flag
-                    #     flag=i+1
                     drop_list.append(ms_df.iloc[flag]["original_index"])
                     #i=flag
                     flag=flag+1
