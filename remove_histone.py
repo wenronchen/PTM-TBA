@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 14 09:04:50 2022
 
 @author: wenrchen
 """
@@ -21,7 +20,7 @@ def extract_uniprot_gene(tmp):
     
     return tmp[:flag]
 
-def extract_ensg(tmp):
+def extract_ensg(tmp): ##extract gene in "ENSGXXXX" format.
     flag=tmp.find("ENSG")
     tmp=tmp[flag:]
     flag=tmp.find("_")
@@ -47,6 +46,5 @@ for i in range(df.shape[0]):
         if(gene_name.find("H1")==-1 and gene_name.find("H2")==-1 and gene_name.find("H3")==-1 and gene_name.find("H4")==-1):
             filtered_df=filtered_df.append(df.loc[i],ignore_index=True)
 
-print(filtered_df.shape[0])
 filtered_df.to_csv(sys.argv[2],sep='\t',index=None)
 
