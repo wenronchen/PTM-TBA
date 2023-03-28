@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 15 10:20:14 2022
 
 @author: wenrchen
 """
-##merge proteoforms with similar sequence and similar mass shifts.
+##remove duplidated mass shifts from proteoform table. (Top-down)
 
 import pandas as pd
 import sys
@@ -24,13 +23,6 @@ def extract_ptm(tmp):
                 return float(tmp_ptm)
             else:
                 return tmp_ptm
-
-# def is_float(s):
-#     try:
-#         float(s)
-#         return True
-#     except ValueError:
-#         return False
     
 def get_ptm_range(tmp,first):
     #remove the letter before "." and the letter after "."
@@ -149,7 +141,7 @@ for k,v in n_term_dict.items(): ##remove dup n-term acetylation
                     drop_list_n_term.append(v[j])
                 else:
                     drop_list_n_term.append(v[i])
-#print(drop_list)
+
 print(n_term_cnt)
 
 df_n_term=df.drop(drop_list_n_term)
