@@ -8,9 +8,9 @@ A toolkit for extracting PTM information and verifing PTM information with top-d
 
     sh  PTM-TBA_one_step.sh -t 0.1
     
-##### 1.2  Run with your own data sets.
+##### 1.2  Run with your own data sets and error tolerance t for your purpose.
 
-    sh PTM-TBA_one_step.sh -td_input /path/to/proteoform.tsv -bu_input /path/to/peptides.tsv -anno uniprot_preferred_gene_modified_residue.tsv
+    sh PTM-TBA_one_step.sh -td_input /path/to/proteoform.tsv -bu_input /path/to/peptides.tsv -anno uniprot_preferred_gene_modified_residue.tsv -t 0.1
     
 ### 2. Step-by-step pipeline
 ##### 2.1 Preprocessing mass shifts identified from top-down MS data
@@ -23,8 +23,8 @@ python3 remove_histone.py proteoform_with_ms.tsv proteoform_with_ms_no_histone.t
 python3 remove_dup_mass_shift_top_down.py proteoform_with_ms.tsv 0.1 other_mass_shift.tsv mass_shift_n_term.tsv
 # Extract mass shift information including mass and range 
 python3 extract_ptm_to_df.py mass_shift.tsv mass_shift_with_info.tsv
-# Assign PTM type to mass shifts from high-frequency ones with error tolerance 0.1 Da
-python3 find_confident_ptm.py mass_shift_with_info.tsv 0.1 mass_shift_assigned_with_high_frequency.tsv mass_shift_not_identified.tsv
+# Assign PTM type to mass shifts from high-frequency ones with a user-defined error tolerance (0.1 Da)
+python3 find_confident_ptm.py mass_shift_with_info.tsv mass_shift_assigned_with_high_frequency.tsv mass_shift_not_identified.tsv 0.1
 
 ```
 ##### 2.2 Preprocessing mass shifts idenfied from bottom-up MS data
@@ -35,8 +35,15 @@ python3 extract_ptm_from_psm.py psm.tsv psm_with_ms.tsv
 python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
 
 ```
-##### 2.3  Verifying mass shifts from top-down MS with mass shifts from bottom-up MS
+##### 2.3  Verifying mass shifts from top-down MS with mass shifts from bottom-up MS with a user-defined error tolerance
 ```sh
+python3 find_open_search_evidence.py input1=mass_shift_top_down.tsv input2=mass_shift_bottom_up.tsv t=0.1 output=mass_shift_td_matched_with_bu.tsv n-term-mode=0
+
+```
+##### 2.4 Verifying mass shifts from top-down MS with UniProt annotations with a user-defined error tolerance
+```sh
+python3 find_uniprot_evidence.py input1=mass_shift_top-down.tsv input2=uniprot_preferred_gene_modified_residue.tsv t=0.1 output=mass_shift_td_matched_with_anno.tsv
+```
 
 
 
