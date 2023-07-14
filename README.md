@@ -147,11 +147,10 @@ python3 download_uniprot_ptm_annotation.py output.tsv
 #### 4.2 Preprocess PTM annotations from dbPTM
 Download the annotation of experimental PTM sites in dbPTM for specified PTM types [here](https://awi.cuhk.edu.cn/dbPTM/download.php).
 
-Extract PTM sites, e.g. phosphorylation about the species Homo Sapiens using the following command:
+Extract PTM sites, e.g. phosphorylation, about the species Homo Sapiens using the following command:
 ```sh
 grep "_HUMAN" Phosphorylation > human_anno/phosphorylation_human.tsv
 ```
-
 
 ### 5.  Verifying mass shifts from proteoforms with PTM annotations
 #### 5.1 Verifying using UniProt annotations
@@ -169,7 +168,19 @@ Run the command:
 python3 find_uniprot_evidence.py input1=mass_shift_top-down.tsv input2=uniprot_preferred_gene_modified_residue.tsv t=0.1 output=mass_shift_td_matched_with_anno.tsv
 ```
 #### 5.2 Verifying using dbPTM annotations 
+Input parameter:
+* input1: .tsv file containing top-down mass shift information
+* input2: .tsv file containing PTM annotations
+* output: output file name for the matched entries
+* n-term-mode: 0 or 1, 0 represents matching for mass shifts except N-terminal acetylation and 1 represents matching for N-terminal acetylation 
 
+Output:
+* .tsv file containing matched entries
+
+Run the command:
+```sh
+python3 find_dbPTM_evidence.py input1=mass_shift_top-down.tsv input2=phosphorylation_human.tsv output=mass_shift_td_matched_with_anno.tsv n-term-mode=0
+```
 
 ### 6. Quick Start
 ##### 1.1  Run the examples of SW480 data sets in paper. 
