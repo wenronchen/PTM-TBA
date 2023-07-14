@@ -3,6 +3,98 @@
 A toolkit for extracting PTM information and verifing PTM information with top-down MS, bottom-up MS and UniProt annotations.
 
 ## PTM-TBA tutorials
+### Download
+
+### Overview
+* Preprocess mass shifts from peptide identifications
+* Preprocess mass shifts from proteoforms
+* Extract PTM annotations from knowledgebases (UniProt and dbPTM)
+* Verify PTMs/mass shifts from proteoforms using annotations/peptides
+
+### 1. Preprocess mass shifts from peptide identifications
+#### 1.1 Database search for bottom-up spectra
+Requirements
+* .mzML file of bottom-up spectra
+* protein database in fasta format
+* installed FragPipe
+
+Perform the open search mode following the instructions [here](https://fragpipe.nesvilab.org/docs/tutorial_open.html).
+#### 1.2 Extract mass shifts from peptide identifications
+Input parameter:
+* .tsv file containing identifications with mass shift information, e.g. psm.tsv in the output files of MS-Fragger
+* output file name
+
+Output:
+* .tsv file containing mass shift information including mass, possible range of localization, annotation
+
+Run the command:
+```sh
+python3 extract_ptm_from_psm.py psm.tsv psm_with_ms.tsv
+```
+#### 1.3 Remove duplicated mass shifts with greedy algorithm
+Input parameter:
+* .tsv file containing mass shift information, e.g. psm_with_ms.tsv
+* error tolerance (Da), e.g. 0.1
+* output file name
+
+Output:
+* .tsv file containing mass shift information wihtout duplicates
+
+Run the command:
+```sh
+python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
+```
+#### (Optional) 1.4 Substitute FragPipe with MetaMorpheus 
+
+### 2. Preprocess mass shifts from proteoform identifications
+#### 2.1 Database search for top-down spectra
+Requirements
+* .mzML file of top-down spectra
+* protein database in fasta format
+* installed TopPIC Suite
+
+Perform the open search following the instructions [here](https://www.toppic.org/software/toppic/tutorial.html).
+#### 2.2 Get proteoforms with mass shifts
+Input parameter:
+* .tsv file containing identifications with mass shift information, e.g. toppic_proteoform_single.tsv in the output files of TopPIC
+* output file name
+
+Output:
+* .tsv file containing proteoforms with mass shifts
+
+Run the command:
+```sh
+python3 get_proteoforms_with_ms.py toppic_proteoform_single.tsv proteoform_with_ms.tsv
+```
+#### (Optional) 2.3 Remove proteoforms from histone proteins
+Input parameter:
+* .tsv file containing proteoforms with mass shifts
+* output file name
+
+Output:
+* .tsv file containing proteoforms without those from histone proteins
+
+Run the command:
+```sh
+python3 remove_histone.py proteoform_with_ms.tsv proteoform_with_ms_no_histone.tsv
+```
+#### 2.4 Remove duplicated mass shifts and split mass shifts into N-terminal acetylation and other PTMs
+Input parameter:
+* .tsv file containing proteoforms with mass shifts
+* error tolerance (Da)
+* output file name for N-terminal acetylation
+* output file name for other PTMs
+
+Output:
+* .tsv file containing N-terminal acetylation
+* .tsv file containing other PTMs
+
+Run the command:
+```sh
+python3 remove_dup_mass_shift_top_down.py proteoform_with_ms_no_histone.tsv 0.1 mass_shift_n_term.tsv other_mass_shift.tsv 
+```
+
+
 ### 1. Quick Start
 ##### 1.1  Run the examples of SW480 data sets in paper. 
 
