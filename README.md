@@ -138,10 +138,14 @@ Run the command:
 python3 find_open_search_evidence.py input1=mass_shift_top_down.tsv input2=mass_shift_bottom_up.tsv t=0.1 output=mass_shift_td_matched_with_bu.tsv n-term-mode=0
 ```
 ### 4. Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)
-#### 4.1 
+#### 4.1 Preprocess PTM annotations from UniProt
+
+
+#### 4.2 Preprocess PTM annotations from dbPTM
 
 
 ### 5.  Verifying mass shifts from proteoforms with PTM annotations
+#### 5.1 Verifying using UniProt annotations
 Input parameter:
 * input1: .tsv file containing top-down mass shift information
 * input2: .tsv file containing PTM annotations
@@ -155,7 +159,7 @@ Run the command:
 ```sh
 python3 find_uniprot_evidence.py input1=mass_shift_top-down.tsv input2=uniprot_preferred_gene_modified_residue.tsv t=0.1 output=mass_shift_td_matched_with_anno.tsv
 ```
-
+#### 5.2 Verifying using dbPTM annotations 
 
 
 ### 6. Quick Start
