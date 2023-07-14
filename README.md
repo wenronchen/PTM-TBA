@@ -4,7 +4,7 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 
 ## PTM-TBA tutorials
 ### Download
-
+You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
 ### Overview
 * [Preprocess mass shifts from peptide identifications](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
 * [Preprocess mass shifts from proteoforms](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#2-preprocess-mass-shifts-from-proteoform-identifications)
