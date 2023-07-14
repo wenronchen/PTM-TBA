@@ -6,7 +6,7 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 ### Download
 
 ### Overview
-* Preprocess mass shifts from peptide identifications
+* [Preprocess mass shifts from peptide identifications](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
 * Preprocess mass shifts from proteoforms
 * Verify mass shifts from proteoforms using mass shifts from peptides
 * Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)
