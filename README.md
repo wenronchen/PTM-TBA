@@ -1,6 +1,6 @@
 # PTM-TBA
 
-A toolkit for extracting PTM information and verifing PTM information with top-down MS, bottom-up MS and UniProt annotations.
+A toolkit for extracting PTM information and verifying PTM information with top-down MS, bottom-up MS, and UniProt annotations
 
 ## PTM-TBA tutorials
 ### Download
@@ -8,8 +8,9 @@ A toolkit for extracting PTM information and verifing PTM information with top-d
 ### Overview
 * Preprocess mass shifts from peptide identifications
 * Preprocess mass shifts from proteoforms
-* Extract PTM annotations from knowledgebases (UniProt and dbPTM)
-* Verify PTMs/mass shifts from proteoforms using annotations/peptides
+* Verify PTMs/mass shifts from proteoforms using peptides
+* Extract PTM annotations from knowledge bases (UniProt and dbPTM)
+* Verify PTMs/mass shifts from proteoforms using annotations
 
 ### 1. Preprocess mass shifts from peptide identifications
 #### 1.1 Database search for bottom-up spectra
@@ -25,7 +26,7 @@ Input parameter:
 * output file name
 
 Output:
-* .tsv file containing mass shift information including mass, possible range of localization, annotation
+* .tsv file containing mass shift information, including mass, possible range of localization, and annotation
 
 Run the command:
 ```sh
@@ -38,7 +39,7 @@ Input parameter:
 * output file name
 
 Output:
-* .tsv file containing mass shift information wihtout duplicates
+* .tsv file containing mass shift information without duplicates
 
 Run the command:
 ```sh
