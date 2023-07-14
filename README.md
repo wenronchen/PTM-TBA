@@ -139,9 +139,18 @@ python3 find_open_search_evidence.py input1=mass_shift_top_down.tsv input2=mass_
 ```
 ### 4. Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)
 #### 4.1 Preprocess PTM annotations from UniProt
-
+Download Entries "Genes" and "Modified residues" for the species Homo Sapiens to a list. (You can download the extracted list here.)
+```sh
+python3 download_uniprot_ptm_annotation.py output.tsv
+```
 
 #### 4.2 Preprocess PTM annotations from dbPTM
+Download the annotation of experimental PTM sites in dbPTM for specified PTM types [here](https://awi.cuhk.edu.cn/dbPTM/download.php).
+
+Extract PTM sites, e.g. phosphorylation about the species Homo Sapiens using the following command:
+```sh
+grep "_HUMAN" Phosphorylation > human_anno/phosphorylation_human.tsv
+```
 
 
 ### 5.  Verifying mass shifts from proteoforms with PTM annotations
