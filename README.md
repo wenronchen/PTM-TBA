@@ -14,7 +14,7 @@ You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/ar
 * [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-extract-ptm-information-from-unimod) 
 * [(Optional) Verify mass shifts from proteoforms using ids from MaxQuant]()
 * [(Optional) Verify mass shifts from proteoforms using ids from MetaMorpheus]()
-* [(Optional) Get spefified PTMs from proteoforms using ids from MSPathFinder]()
+* [(Optional) Get specified PTMs from proteoforms using ids from MSPathFinder]()
 
 ### 1. Preprocess mass shifts from peptide identifications
 #### 1.1 Database search for bottom-up spectra
@@ -214,16 +214,29 @@ Input:
 
 Output:
 * mod_peptides.txt
-* 
+
 Run the command:
 ```sh
 python3 merge_peptide_df.py txt/peptides.txt txt/modificationSpecificPeptides.txt mod_peptides.tsv
 ```
 #### 7.3 Verify the mass shifts from proteoforms using ids from MaxQuant
 Input:
-* 
+* .tsv file containing top-down mass shift information
+* mod_peptides.tsv from the step 7.2
+* evidence.txt in outputs of MaxQuant
+* type of ptm, e.g. Phospho
+* monoisotopic mass of ptm, e.g. 79.9663
+* error tolerance
+* output file name of PTM with verified evidences
 
 Output:
+* PTM_with_evidence.tsv
+
+Run the command:
+```sh
+python3 find_ptm_evidence.py mass_shift_top-down.tsv mod_peptides.tsv txt/evidence.txt Phospho 79.9663 0.1 phospho_evidence.tsv
+
+```
 
 ### (Optional) 8. Verify mass shifts from proteoforms using ids from MetaMorpheus
 #### 8.1 Get peptide identifications using MetaMorpheus
