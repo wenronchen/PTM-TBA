@@ -46,11 +46,9 @@ Run the command:
 python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
 ```
 #### (Optional) 1.4 Substitute FragPipe with MetaMorpheus 
-1.4.1 Download and install MetaMorpheus following the instructions [here](https://github.com/smith-chem-wisc/MetaMorpheus/wiki/Getting-Started#test-conda-installation-linux-macos-windows).
-
-1.4.2 Download the parameters for the five Tasks executed in MetaMorpheus.
-
-1.4.3 Run MetaMorpheus via the command line:
+* Download and install MetaMorpheus following the instructions [here](https://github.com/smith-chem-wisc/MetaMorpheus/wiki/Getting-Started#test-conda-installation-linux-macos-windows).
+* Download the parameters for the five Tasks executed in MetaMorpheus.
+* Run MetaMorpheus via the command line:
 ```sh
 metamorpheus -t Task1-SearchTaskconfig.toml Task2-CalibrateTaskconfig.toml Task3-SearchTaskconfig.toml Task4-GPTMDTaskconfig.toml Task5-SearchTaskconfig.toml -s test.raw -d human.fasta
 ```
