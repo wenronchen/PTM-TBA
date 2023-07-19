@@ -11,6 +11,9 @@ You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/ar
 * [Verify mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
 * [Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-ptm-annotations-from-knowledge-bases-uniprot-and-dbptm)
 * [Verify mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
+* [Extract PTM information from UNIMOD](). 
+* (Optional) Verify mass shifts from proteoforms using ids from MaxQuant
+* (Optional) Verify mass shifts from proteoforms using ids from MetaMorpheus
 
 ### 1. Preprocess mass shifts from peptide identifications
 #### 1.1 Database search for bottom-up spectra
@@ -129,7 +132,7 @@ Run the command:
 python3 find_confident_ptm.py mass_shift_with_info.tsv mass_shift_assigned_with_high_frequency.tsv mass_shift_not_identified.tsv 0.1 
 ```
 ### 3. Verifying mass shifts from proteoforms with mass shifts from peptides
-#### 3.1 Using peptides identified from MS-Fragger
+
 Input parameter:
 * input1: .tsv file containing top-down mass shift information
 * input2: .tsv file containing bottom-up mass shift information
@@ -209,7 +212,27 @@ Run the command:
 python3 find_dbPTM_evidence.py input1=mass_shift_top-down.tsv input2=phosphorylation_human.tsv output=mass_shift_td_matched_with_anno.tsv n-term-mode=0
 ```
 
-### 6. Quick Start
+### 6. Extract PTM information from UNIMOD
+Extract PTM information as follows:
+* Name: name of the modification (Unimod PSI-MS name)
+* Mass: monoisotopic mass of modification
+* Residues: amino acids that can be modified
+* Position: positions in the protein where the modification can be attached
+* UnimodID: unmimod id of the modification
+
+Input:
+* The entire contents of Unimod in OBO format, you can download it [here](https://www.unimod.org/downloads.html).
+* output file name for the extracted PTMs
+Output:
+* Extracted PTM list with information in txt format.
+
+Run the command:
+```sh
+python3 extract_ptm_from_unimod.py unimod.obo unimod_ptm_list.txt
+```
+
+
+### 10. Quick Start
 ##### 1.1  Run the examples of SW480 data sets in paper. 
 
     sh  PTM-TBA_one_step.sh -t 0.1
