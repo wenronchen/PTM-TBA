@@ -52,6 +52,9 @@ python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
 ```sh
 metamorpheus -t Task1-SearchTaskconfig.toml Task2-CalibrateTaskconfig.toml Task3-SearchTaskconfig.toml Task4-GPTMDTaskconfig.toml Task5-SearchTaskconfig.toml -s test.raw -d human.fasta
 ```
+#### (Optional) 1.5 Substitute FragPipe with MaxQuant
+* Download and install MaxQuant following the instructions [here](https://www.maxquant.org/).
+* Set the PTM in which you are interested as the variable PTM when you perform the database search using MaxQuant.
 
 ### 2. Preprocess mass shifts from proteoform identifications
 #### 2.1 Database search for top-down spectra
