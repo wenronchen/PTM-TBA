@@ -52,9 +52,6 @@ python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
 ```sh
 metamorpheus -t Task1-SearchTaskconfig.toml Task2-CalibrateTaskconfig.toml Task3-SearchTaskconfig.toml Task4-GPTMDTaskconfig.toml Task5-SearchTaskconfig.toml -s test.raw -d human.fasta
 ```
-#### (Optional) 1.5 Substitute FragPipe with MaxQuant
-* Download and install MaxQuant following the instructions [here](https://www.maxquant.org/).
-* Set the PTM in which you are interested as the variable PTM when you perform the database search using MaxQuant.
 
 ### 2. Preprocess mass shifts from proteoform identifications
 #### 2.1 Database search for top-down spectra
@@ -132,6 +129,7 @@ Run the command:
 python3 find_confident_ptm.py mass_shift_with_info.tsv mass_shift_assigned_with_high_frequency.tsv mass_shift_not_identified.tsv 0.1 
 ```
 ### 3. Verifying mass shifts from proteoforms with mass shifts from peptides
+#### 3.1 Using peptides identified from MS-Fragger
 Input parameter:
 * input1: .tsv file containing top-down mass shift information
 * input2: .tsv file containing bottom-up mass shift information
@@ -146,6 +144,26 @@ Run the command:
 ```sh
 python3 find_open_search_evidence.py input1=mass_shift_top_down.tsv input2=mass_shift_bottom_up.tsv t=0.1 output=mass_shift_td_matched_with_bu.tsv n-term-mode=0
 ```
+#### 3.2 Using peptides identified from MaxQuant
+Download and install MaxQuant following the instructions [here](https://www.maxquant.org/).
+
+Set the PTM in which you are interested as the variable PTM when you perform the database search using MaxQuant.
+
+Get peptides with modifications and positions using the outputs from MaxQuant.
+Input:
+* peptides.txt
+* modificationSpecificPeptides.txt
+
+Output:
+* mod_peptides.txt
+* 
+Run the command:
+```sh
+python3 merge_peptide_df.py txt/peptides.txt txt/modificationSpecificPeptides.txt mod_peptides.tsv
+``` 
+
+
+
 ### 4. Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)
 #### 4.1 Preprocess PTM annotations from UniProt
 Download Entries "Genes" and "Modified residues" for the species Homo Sapiens to a list. (You can download the extracted list here.)
