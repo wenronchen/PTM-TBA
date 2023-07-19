@@ -12,9 +12,9 @@ You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/ar
 * [Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-ptm-annotations-from-knowledge-bases-uniprot-and-dbptm)
 * [Verify mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
 * [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-extract-ptm-information-from-unimod) 
-* [(Optional) Verify mass shifts from proteoforms using ids from MaxQuant](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-7-verify-mass-shifts-from-proteoforms-using-ids-from-maxquant)
-* [(Optional) Verify mass shifts from proteoforms using ids from MetaMorpheus](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-8-verify-mass-shifts-from-proteoforms-using-ids-from-metamorpheus)
-* [(Optional) Get pre-defined PTMs from proteoforms using ids from MSPathFinder](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-9-get-pre-defined-ptms-from-proteoforms-using-ids-from-mspathfinder)
+* [(Optional) Verify mass shifts from proteoforms using IDs from MaxQuant](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-7-verify-mass-shifts-from-proteoforms-using-ids-from-maxquant)
+* [(Optional) Verify mass shifts from proteoforms using IDs from MetaMorpheus](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-8-verify-mass-shifts-from-proteoforms-using-ids-from-metamorpheus)
+* [(Optional) Get pre-defined PTMs from proteoforms using IDs from MSPathFinder](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-9-get-pre-defined-ptms-from-proteoforms-using-ids-from-mspathfinder)
 
 ### 1. Preprocess mass shifts from peptide identifications
 #### 1.1 Database search for bottom-up spectra
@@ -27,6 +27,7 @@ Perform the open search mode following the instructions [here](https://fragpipe.
 #### 1.2 Extract mass shifts from peptide identifications
 Input parameter:
 * .tsv file containing identifications with mass shift information, e.g. psm.tsv in the output files of MS-Fragger
+* search engine name, e.g. "msfragger"
 * output file name
 
 Output:
@@ -34,7 +35,7 @@ Output:
 
 Run the command:
 ```sh
-python3 extract_ptm_from_psm.py psm.tsv psm_with_ms.tsv
+python3 extract_ptm_from_psm.py psm.tsv "msfragger" psm_with_ms.tsv
 ```
 #### 1.3 Remove duplicated mass shifts with greedy algorithm
 Input parameter:
@@ -203,7 +204,7 @@ Run the command:
 ```sh
 python3 extract_ptm_from_unimod.py unimod.obo unimod_ptm_list.txt
 ```
-### (Optional) 7. Verify mass shifts from proteoforms using ids from MaxQuant
+### (Optional) 7. Verify mass shifts from proteoforms using IDs from MaxQuant
 #### 7.1 Get peptide identifications using MaxQuant
 Download and install MaxQuant following the instructions [here](https://www.maxquant.org/). Set the PTM in which you are interested as the variable PTM when you perform the database search using MaxQuant.
 
@@ -236,7 +237,7 @@ Run the command:
 ```sh
 python3 find_ptm_evidence.py mass_shift_top-down.tsv mod_peptides.tsv txt/evidence.txt Phospho 79.9663 0.1 phospho_evidence.tsv
 ```
-### (Optional) 8. Verify mass shifts from proteoforms using ids from MetaMorpheus
+### (Optional) 8. Verify mass shifts from proteoforms using IDs from MetaMorpheus
 #### 8.1 Get peptide identifications using MetaMorpheus
 Download and install MetaMorpheus following the instructions [here](https://github.com/smith-chem-wisc/MetaMorpheus/wiki/Getting-Started#test-conda-installation-linux-macos-windows). Download the parameters for the five Tasks executed in MetaMorpheus.
 
@@ -244,10 +245,32 @@ Run MetaMorpheus via the command line:
 ```sh
 metamorpheus -t Task1-SearchTaskconfig.toml Task2-CalibrateTaskconfig.toml Task3-SearchTaskconfig.toml Task4-GPTMDTaskconfig.toml Task5-SearchTaskconfig.toml -s test.raw -d human.fasta
 ```
-#### 8.2 Get mass shifts from peptide identifications
+#### 8.2 Extract mass shifts from peptide identifications
+Input:
+* .tsv file containing identifications with mass shift information
+* search engine name, e.g. "metamorpheus"
+* output file name
+
+Output:
+* .tsv file containing mass shift information, including mass, possible range of localization, and annotation
+
+Run the command:
+```sh
+python3 extract_ptm_from_psm.py psm.tsv "metamorpheus" psm_with_ms.tsv
+```
+#### 8.3 Remove duplicated mass shifts
+Input:
+
+Output:
+*
+
+Run the command:
+```sh
+
+```
 
 
-### (Optional) 9. Get pre-defined PTMs from proteoforms using ids from MSPathFinder
+### (Optional) 9. Get pre-defined PTMs from proteoforms using IDs from MSPathFinder
 #### 9.1 Get proteoform identifications using MSPathFinder
 
 
