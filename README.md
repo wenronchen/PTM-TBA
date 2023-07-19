@@ -235,9 +235,7 @@ Output:
 Run the command:
 ```sh
 python3 find_ptm_evidence.py mass_shift_top-down.tsv mod_peptides.tsv txt/evidence.txt Phospho 79.9663 0.1 phospho_evidence.tsv
-
 ```
-
 ### (Optional) 8. Verify mass shifts from proteoforms using ids from MetaMorpheus
 #### 8.1 Get peptide identifications using MetaMorpheus
 Download and install MetaMorpheus following the instructions [here](https://github.com/smith-chem-wisc/MetaMorpheus/wiki/Getting-Started#test-conda-installation-linux-macos-windows). Download the parameters for the five Tasks executed in MetaMorpheus.
@@ -247,6 +245,10 @@ Run MetaMorpheus via the command line:
 metamorpheus -t Task1-SearchTaskconfig.toml Task2-CalibrateTaskconfig.toml Task3-SearchTaskconfig.toml Task4-GPTMDTaskconfig.toml Task5-SearchTaskconfig.toml -s test.raw -d human.fasta
 ```
 #### 8.2 Get mass shifts from peptide identifications
+
+
+### (Optional) 9. Get pre-defined PTMs from proteoforms using ids from MSPathFinder
+#### 9.1 Get proteoform identifications using MSPathFinder
 
 
 ### 10. Quick Start
