@@ -13,8 +13,8 @@ You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/ar
 * [Verify mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
 * [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-extract-ptm-information-from-unimod) 
 * [(Optional) Verify mass shifts from proteoforms using ids from MaxQuant](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-7-verify-mass-shifts-from-proteoforms-using-ids-from-maxquant)
-* [(Optional) Verify mass shifts from proteoforms using ids from MetaMorpheus]()
-* [(Optional) Get specified PTMs from proteoforms using ids from MSPathFinder]()
+* [(Optional) Verify mass shifts from proteoforms using ids from MetaMorpheus](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-8-verify-mass-shifts-from-proteoforms-using-ids-from-metamorpheus)
+* [(Optional) Get pre-defined PTMs from proteoforms using ids from MSPathFinder]()
 
 ### 1. Preprocess mass shifts from peptide identifications
 #### 1.1 Database search for bottom-up spectra
