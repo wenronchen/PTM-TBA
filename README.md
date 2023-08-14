@@ -6,17 +6,28 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 ### Download
 You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
 ### Overview
-* [Preprocess mass shifts from peptide identifications](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
-* [Preprocess mass shifts from proteoforms](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#2-preprocess-mass-shifts-from-proteoform-identifications)
-* [Verify mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
-* [Preprocess PTM annotations from knowledge bases (UniProt and dbPTM)](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-ptm-annotations-from-knowledge-bases-uniprot-and-dbptm)
-* [Verify mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
+* [Bottom-up MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
+   - ID with MS-Fragger
+   - ID with MetaMorpheus
+   - ID with MaxQuant
+* [Top-down MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#2-preprocess-mass-shifts-from-proteoform-identifications)
+    - ID with TopPIC
+    - ID with MSPathFinder
+* [Verification of mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
+    - MS-Fragger + TopPIC
+    - MS-Fragger + MSPathFinder
+    - MetaMorpheus + TopPIC
+    - MaxQuant + TopPIC
+* [PTM annotations extraction](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-ptm-annotations-from-knowledge-bases-uniprot-and-dbptm)
+    - UniProt
+    - dbPTM
+* [Verification of mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
+   - UniProt + TopPIC
+   - dbPTM + TopPIC
 * [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-extract-ptm-information-from-unimod) 
-* [(Optional) Verify mass shifts from proteoforms using IDs from MaxQuant](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-7-verify-mass-shifts-from-proteoforms-using-ids-from-maxquant)
-* [(Optional) Verify mass shifts from proteoforms using IDs from MetaMorpheus](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-8-verify-mass-shifts-from-proteoforms-using-ids-from-metamorpheus)
-* [(Optional) Get pre-defined PTMs from proteoforms using IDs from MSPathFinder](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#optional-9-get-pre-defined-ptms-from-proteoforms-using-ids-from-mspathfinder)
 
-### 1. Preprocess mass shifts from peptide identifications
+
+### 1. Bottom-up MS database search
 #### 1.1 Database search for bottom-up spectra
 Requirements
 * .mzML file of bottom-up spectra
