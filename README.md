@@ -4,7 +4,7 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 
 ## PTM-TBA tutorials
 ### Download
-You can download the Python code [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
+You can download the Python code and test examples [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
 ### Overview
 * [Bottom-up MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
    - ID with MS-Fragger
