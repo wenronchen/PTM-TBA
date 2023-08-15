@@ -7,12 +7,14 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 You can download the Python code and test examples [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
 ### Overview
 * [Bottom-up MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
-   - ID with MS-Fragger
-   - ID with MetaMorpheus
-   - ID with MaxQuant
+   - Database search using MS-Fragger
+   - Database search using MetaMorpheus
+   - Database search using MaxQuant
 * [Top-down MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#2-preprocess-mass-shifts-from-proteoform-identifications)
-    - ID with TopPIC
-    - ID with MSPathFinder
+    - Database search using TopPIC
+    - Database search using MSPathFinder
+* Preprocess mass shifts from peptide identifications
+* Preprocess mass shifts from proteoform identifications
 * [Verification of mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
     - MS-Fragger + TopPIC
     - MS-Fragger + MSPathFinder
@@ -28,7 +30,7 @@ You can download the Python code and test examples [here](https://github.com/wen
 
 
 ### 1. Bottom-up MS database search
-#### 1.1 Database search for bottom-up spectra
+#### 1.1 Database search with MS-Fragger
 Requirements
 * .mzML file of bottom-up spectra
 * protein database in fasta format
