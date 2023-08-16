@@ -198,7 +198,7 @@ Output:
 
 Run the command:
 ```sh
-python3 find_ptm_evidence.py mass_shift_top-down.tsv mod_peptides.tsv txt/evidence.txt Phospho 79.9663 0.1 phospho_evidence.tsv
+python3 find_ptm_evidence_maxquant.py mass_shift_top-down.tsv mod_peptides.tsv txt/evidence.txt Phospho 79.9663 0.1 phospho_evidence.tsv
 ```
 
 ### 6. PTM annotations extraction
