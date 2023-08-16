@@ -18,7 +18,7 @@ You can download the Python code and test examples [here](https://github.com/wen
 * [Verification of mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
     - MS-Fragger/MetaMorphpus + TopPIC/MSPathFinder
     - MaxQuant + TopPIC
-* [PTM annotations extraction]()
+* [PTM annotations extraction](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-ptm-annotations-extraction)
     - UniProt
     - dbPTM
 * [Verification of mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
@@ -168,7 +168,7 @@ Run the command:
 python3 find_confident_ptm.py mass_shift_with_info.tsv mass_shift_assigned_with_high_frequency.tsv mass_shift_not_identified.tsv 0.1 
 ```
 ### 5. Verifying mass shifts from proteoforms with mass shifts from peptides
-#### 5.1 Verifying mass shifts using MS-Fragger and MetaMorpheus results
+#### 5.1 Verifying mass shifts using MS-Fragger or MetaMorpheus results
 Input parameter:
 * input1: .tsv file containing top-down mass shift information
 * input2: .tsv file containing bottom-up mass shift information
