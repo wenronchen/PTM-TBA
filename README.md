@@ -15,12 +15,10 @@ You can download the Python code and test examples [here](https://github.com/wen
     - Database search using TopPIC
     - Database search using MSPathFinder
 * [Preprocess mass shifts from proteoform identifications](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-mass-shifts-from-proteoform-identifications)
-* [Verification of mass shifts from proteoforms using mass shifts from peptides]()
-    - MS-Fragger + TopPIC
-    - MS-Fragger + MSPathFinder
-    - MetaMorpheus + TopPIC
+* [Verification of mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
+    - MS-Fragger/MetaMorphpus + TopPIC/MSPathFinder
     - MaxQuant + TopPIC
-* [PTM annotations extraction](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#4-preprocess-ptm-annotations-from-knowledge-bases-uniprot-and-dbptm)
+* [PTM annotations extraction]()
     - UniProt
     - dbPTM
 * [Verification of mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
