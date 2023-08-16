@@ -21,10 +21,10 @@ You can download the Python code and test examples [here](https://github.com/wen
 * [PTM annotations extraction](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-ptm-annotations-extraction)
     - UniProt
     - dbPTM
-* [Verification of mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#5--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
+* [Verification of mass shifts from proteoforms using PTM annotations](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#7--verifying-mass-shifts-from-proteoforms-with-ptm-annotations)
    - UniProt + TopPIC
    - dbPTM + TopPIC
-* [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#6-extract-ptm-information-from-unimod) 
+* [Extract PTM information from UNIMOD](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#8-extract-ptm-information-from-unimod) 
 
 
 ### 1. Bottom-up MS database search
