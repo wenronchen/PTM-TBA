@@ -6,7 +6,7 @@ A toolkit for extracting PTM information and verifying PTM information with top-
 ### Download
 You can download the Python code and test examples [here](https://github.com/wenronchen/PTM-TBA/archive/refs/heads/master.zip). 
 ### Overview
-* [Bottom-up MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-preprocess-mass-shifts-from-peptide-identifications)
+* [Bottom-up MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#1-bottom-up-ms-database-search)
    - Database search using MS-Fragger
    - Database search using MetaMorpheus
    - Database search using MaxQuant
