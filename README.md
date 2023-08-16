@@ -11,10 +11,10 @@ You can download the Python code and test examples [here](https://github.com/wen
    - Database search using MetaMorpheus
    - Database search using MaxQuant
 * [Preprocess mass shifts from peptide identifications](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#2-preprocess-mass-shifts-from-peptide-identifications)
-* [Top-down MS database search]()
+* [Top-down MS database search](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-top-down-ms-database-search)
     - Database search using TopPIC
     - Database search using MSPathFinder
-* Preprocess mass shifts from proteoform identifications
+* [Preprocess mass shifts from proteoform identifications]()
 * [Verification of mass shifts from proteoforms using mass shifts from peptides](https://github.com/wenronchen/PTM-TBA/blob/master/README.md#3-verifying-mass-shifts-from-proteoforms-with-mass-shifts-from-peptides)
     - MS-Fragger + TopPIC
     - MS-Fragger + MSPathFinder
