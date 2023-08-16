@@ -246,7 +246,7 @@ Run the command:
 python3 find_dbPTM_evidence.py input1=mass_shift_top-down.tsv input2=phosphorylation_human.tsv output=mass_shift_td_matched_with_anno.tsv n-term-mode=0
 ```
 
-### 6. Extract PTM information from UNIMOD
+### 8. Extract PTM information from UNIMOD
 Extract PTM information as follows:
 * Name: name of the modification (Unimod PSI-MS name)
 * Mass: monoisotopic mass of modification
