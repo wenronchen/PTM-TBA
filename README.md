@@ -72,7 +72,7 @@ Output:
 
 Run the command:
 ```sh
-python3 remove_dup_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
+python3 merge_similar_mass_shift_bu.py psm_with_ms.tsv 0.1 psm_with_ms_no_dup.tsv
 ```
 #### 2.3 Get peptides with modifications and positions (MaxQuant).
 Input:
@@ -138,7 +138,7 @@ Output:
 
 Run the command:
 ```sh
-python3 remove_dup_mass_shift_top_down.py proteoform_with_ms_no_histone.tsv 0.1 mass_shift_n_term.tsv other_mass_shift.tsv 
+python3 merge_similar_mass_shift_toppic.py proteoform_with_ms_no_histone.tsv 0.1 mass_shift_n_term.tsv other_mass_shift.tsv 
 ```
 #### 4.4 Extract mass shift information
 Input parameter:
@@ -150,7 +150,7 @@ Output:
 
 Run the command:
 ```sh
-python3 extract_ptm_to_df.py mass_shift.tsv mass_shift_with_info.tsv 
+python3 extract_ptm_from_proteoform.py mass_shift.tsv mass_shift_with_info.tsv 
 ```
 #### 4.5 Assign PTM type to mass shifts from high-frequency ones with a user-defined error tolerance
 Input parameter:
