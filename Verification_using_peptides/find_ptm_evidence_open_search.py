@@ -9,6 +9,8 @@ Created on Tue May 31 09:59:37 2022
 
 import pandas as pd
 import sys
+import warnings
+warnings.filterwarnings("ignore")
 
 import time
 start_time = time.time()
@@ -126,7 +128,7 @@ df_peptide=pd.read_csv(sys.argv[2],sep='\t') ##peptides with modifications and p
 
 error_tolerance=float(sys.argv[3])
 output=sys.argv[4]
-n_term=int(sys.argv[5])   
+# n_term=int(sys.argv[5])   
  
 df_peptide=df_peptide.fillna(0) 
 
@@ -151,6 +153,11 @@ ptm_value=[]
 match_cnt=0
 proteoform_cnt=0
 match_proteoform=[]
+
+df['PTM Range'] = df['PTM Range'].apply(
+    lambda x: tuple(map(int, x.strip("()").split(", ")))
+)
+
 for i in range(df.shape[0]):
     #first_residue=df.iloc[i]['First residue']
     
@@ -171,10 +178,10 @@ for i in range(df.shape[0]):
     
     # #protein_id=df.iloc[i]['Protein accession'].split("|")[1]
     # protein_id=df.iloc[i]['Protein accession']
-    ptm=ptm_dict[df.iloc[i]['Modifications'].split(" ")[0]]
-    ptm_range=range(df.iloc[i]['Mod global pos'],df.iloc[i]['Mod global pos'])
-    protein_id=df.iloc[i]['ProteinName'].split("|")[0]
-    
+    protein_id=df.iloc[i]['Protein accession'].split("|")[1]
+    ptm = df.iloc[i]['Mass shift']
+    ptm_range = df.iloc[i]['PTM Range']
+    ptm_range = range(ptm_range[0], ptm_range[1])
     
     evidence_tmp=[]
     valid_tmp=[]
