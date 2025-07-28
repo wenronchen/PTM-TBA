@@ -10,6 +10,9 @@ Created on Mon Jan 23 10:31:42 2023
 
 import pandas as pd
 import sys
+import warnings
+
+warnings.simplefilter("ignore")
 
 def contain_lower(seq): ##check whether the sequence contains lower cases
     if(seq!=0):
