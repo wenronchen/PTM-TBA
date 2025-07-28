@@ -121,7 +121,7 @@ for i in range(df.shape[0]):
         #     ace_cnt+=1
         #     remained.append(i)
             ptm_value=ptm_mass_dict[ptm]
-            if(df.iloc[i]['Mass shift'] in ptm_mass_dict.keys() or df.iloc[i]['Mass shift'][1:] in ptm_mass_dict.keys()):
+            if (df.iloc[i]['Mass shift'] in ptm_mass_dict.values()):
                 mass_shift=ptm_mass_dict[df.iloc[i]['Mass shift']]
             else:
                 mass_shift=float(df.iloc[i]['Mass shift'])
