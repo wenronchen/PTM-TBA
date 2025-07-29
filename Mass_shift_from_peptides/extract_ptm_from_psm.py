@@ -48,7 +48,7 @@ for i in range(0,df.shape[0]):
             ptm_end.append(start)
             
             flag=assign_mod.find("(")
-            ptm_value.append(float(assign_mod[flag+1:-1])) ##42.0106 Da
+            ptm_value.append(float(assign_mod[flag+1:-1])) # 42.0106 Da
             df_ms=df_ms.append(df.loc[i],ignore_index=True)
         elif(assign_mod.find("M")!=-1):
             ptm_type.append("Oxidation")
@@ -57,8 +57,21 @@ for i in range(0,df.shape[0]):
             ptm_end.append(start+int(assign_mod[:flag])-1)
             
             flag=assign_mod.find("(")
-            ptm_value.append(float(assign_mod[flag+1:-1])) ##15.9949 Da
+            ptm_value.append(float(assign_mod[flag+1:-1])) # 15.9949 Da
             df_ms=df_ms.append(df.loc[i],ignore_index=True)
+        elif any(residue in assign_mod for residue in ["S", "T", "Y"]):
+            ptm_type.append("Phosphorylation")
+            for res in ["S", "T", "Y"]:
+                if res in assign_mod:
+                    residue_pos = assign_mod.find(res)
+                    ptm_site = start + int(assign_mod[:residue_pos]) - 1
+                    ptm_start.append(ptm_site)
+                    ptm_end.append(ptm_site)
+                    break
+            flag = assign_mod.find("(")
+            ptm_value.append(float(assign_mod[flag + 1:-1]))  # 79.9663 Da
+            df_ms = df_ms.append(df.loc[i], ignore_index=True)
+
     if(abs(df.iloc[i]['Delta Mass'])>=0.1):
         obs_mods=str(df.iloc[i]['Observed Modifications']).split(";")
         for obs_mod in obs_mods:
